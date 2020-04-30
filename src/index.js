@@ -14,16 +14,7 @@ const initialState = {
   ],
 };
 
-for (let index = 0; index < 3; index += 1) {
-  const num = Math.floor(Math.random() * 20);
-  initialState.books[num] = {
-    id: num,
-    title: `Book test ${num}`,
-    category: 'Kids',
-  };
-}
-
-const store = createStore(rootReducer);
+const store = createStore(rootReducer(initialState));
 
 ReactDOM.render(
   <React.StrictMode>

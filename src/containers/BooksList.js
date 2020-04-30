@@ -7,6 +7,7 @@ const BookList = ({ books }) => {
   const displayBooks = books.length > 0 ? (books.map(book => (
     <Book book={book} key={Math.random() * 20} />
   ))) : null;
+
   return (
     <table>
       <thead>
