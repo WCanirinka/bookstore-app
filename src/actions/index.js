@@ -5,12 +5,12 @@ const actions = {
 
 const removeBook = book => ({
   type: actions.REMOVE_BOOK,
-  payload: book,
+  book,
 });
 
 const createBook = book => ({
   type: actions.CREATE_BOOK,
-  payload: book,
+  book,
 });
 
 
