@@ -2,30 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
+import { Provider } from 'react-redux';
 
 const initialState = {
-  books: {
-    1: {
-      id: 1,
-      title: 'The Little Prince',
-      category: 'Kids',
-    },
-    2: {
-      id: 2,
-      title: 'Fundamental Calculus',
-      category: 'Learning',
-    },
-    3: {
-      id: 3,
-      title: 'It',
-      category: 'Horror',
-    },
-  },
+  books: {},
 };
+
+for (let index = 0; index < 3; index += 1) {
+  const num = Math.floor(Math.random() * 20);
+  initialState.books[num] = {
+    id: num,
+    title: `Book test ${num}`,
+    category: 'Kids',
+  };
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={ store }>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
