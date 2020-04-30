@@ -2,12 +2,6 @@ import { actions } from '../actions/index';
 
 const { CREATE_BOOK, REMOVE_BOOK } = actions;
 
-/*
-const initialState = {
-
-};
-*/
-
 export default (state = {}, { type, book }) => {
   let newState;
   switch (type) {
