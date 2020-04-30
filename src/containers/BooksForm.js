@@ -1,14 +1,32 @@
 import React from 'react';
 
-export default function BooksForm() {
-  const options = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+const BooksForm = () => {
+  const categories = [
+    'Action',
+    'Biography',
+    'History',
+    'Horror',
+    'Kids',
+    'Learning',
+    'Sci-Fi',
+  ];
+
   return (
     <form>
-      <input placeholder="Book name" className="book-title" />
+      <input type="text" placeholder="Title" />
       <select>
-        { options.map(bookOption => <option key={bookOption}>{bookOption}</option>) }
+        <option disabled>
+          Select Category
+        </option>
+        {categories.map(category => (
+          <option value={category} key={Math.random() * 5}>
+            {category}
+          </option>
+        ))}
       </select>
-      <submit>Create book</submit>
+      <input type="submit" value="submit" />
     </form>
   );
-}
+};
+
+export default BooksForm;

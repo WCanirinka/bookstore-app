@@ -1,17 +1,16 @@
-const actions = {
-  REMOVE_BOOK: 'REMOVE BOOK',
-  CREATE_BOOK: 'CREATE BOOK',
+const action = {
+  CREATE_BOOK: 'CREATE_BOOK',
+  REMOVE_BOOK: 'REMOVE_BOOK',
 };
 
-const removeBook = book => ({
-  type: actions.REMOVE_BOOK,
-  book,
-});
-
 const createBook = book => ({
-  type: actions.CREATE_BOOK,
-  book,
+  type: action.CREATE_BOOK,
+  payload: book,
 });
 
+const removeBook = book => ({
+  type: action.REMOVE_BOOK,
+  payload: book,
+});
 
-export default { actions, removeBook, createBook };
+export default { action, createBook, removeBook };

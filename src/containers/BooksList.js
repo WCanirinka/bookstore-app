@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 
-
-export default function BooksList({ books }) {
-  const displayBooks = Object.keys(books) > 0 ? (books.map(book => (
-    <Book book={book} key={book.id} />
+const BookList = ({ books }) => {
+  const displayBooks = books.length > 0 ? (books.map(book => (
+    <Book book={book} key={Math.random() * 20} />
   ))) : null;
 
   return (
@@ -19,19 +18,22 @@ export default function BooksList({ books }) {
         </tr>
       </thead>
       <tbody>
-        { displayBooks() }
+        {displayBooks}
       </tbody>
     </table>
   );
-}
+};
 
-BooksList.propTypes = {
-  books: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-  }).isRequired,
+BookList.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 const mapStateToProps = ({ booksReducer: { books } }) => ({
   books,
 });
-connect(mapStateToProps)(BooksList);
+
+export default connect(mapStateToProps)(BookList);
