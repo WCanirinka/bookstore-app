@@ -1,17 +1,33 @@
-import { actions } from '../actions/index';
+import actions from '../actions/index';
 
 const { CREATE_BOOK, REMOVE_BOOK } = actions;
 
-export default (state = {}, { type, book }) => {
+// export default function bookReducer(state = {}, action) {
+//   let newState;
+//   switch (action.type) {
+//     case CREATE_BOOK:
+//       return state.concat(action.book);
+//     case REMOVE_BOOK:
+//       newState = { ...state };
+//       delete newState[action.book.id];
+//       return newState;
+//     default:
+//       return state;
+//   }
+// }
+
+const bookReducer = initialState => (state = initialState, action) => {
   let newState;
-  switch (type) {
+  switch (action.type) {
     case CREATE_BOOK:
-      return state.concat(book);
+      return state.concat(action.book);
     case REMOVE_BOOK:
       newState = { ...state };
-      delete newState[book.id];
+      delete newState[action.book.id];
       return newState;
     default:
       return state;
   }
 };
+
+export default bookReducer;
