@@ -1,23 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import BooksForm from '../containers/BooksForm';
+import '../App.css';
 import BooksList from '../containers/BooksList';
+import BooksForm from '../containers/BooksForm';
 
-class App extends React.Component {
-  componentDidMount() {
-    // const { store } = this.context;
-  }
-
-  render() {
-    const { store } = this.context;
-    console.log(store);
-    return (
-      <div>
-        <BooksForm />
-        <BooksList />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <BooksList />
+      <BooksForm />
+    </div>
+  );
 }
 
 export default App;

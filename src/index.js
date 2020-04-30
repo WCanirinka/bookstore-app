@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import rootReducer from './reducers/index';
 import './index.css';
 import App from './components/App';
 
 const initialState = {
-  books: {},
+  books: [
+    { id: Math.floor(Math.random() * 30).toString(), title: 'Title 1', category: 'Kids' },
+    { id: Math.floor(Math.random() * 30).toString(), title: 'Title 2', category: 'Action' },
+    { id: Math.floor(Math.random() * 30).toString(), title: 'Title 3', category: 'Learning' },
+  ],
 };
 
 for (let index = 0; index < 3; index += 1) {
@@ -19,7 +23,6 @@ for (let index = 0; index < 3; index += 1) {
   };
 }
 
-// const store = createStore(rootReducer(initialState));
 const store = createStore(rootReducer);
 
 ReactDOM.render(

@@ -4,9 +4,9 @@ import bookReducer from './book';
 export default combineReducers({ bookReducer });
 /*
 const rootReducer = state => {
-  const bookReducers = bookReducer(state);
+  const booksReducer = books(state);
   return combineReducers({
-    bookReducers,
+    booksReducer,
   });
 };
 

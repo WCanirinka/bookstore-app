@@ -1,33 +1,21 @@
 import actions from '../actions/index';
 
-const { CREATE_BOOK, REMOVE_BOOK } = actions;
+const { action } = actions;
+const { CREATE_BOOK, REMOVE_BOOK } = action;
 
-export default function bookReducer(state = 1, action) {
-  let newState;
+const booksReducer = initialState => (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
-      return state.concat(action.book);
+      return {
+        ...state, books: [...state.books, action.payload],
+      };
     case REMOVE_BOOK:
-      newState = { ...state };
-      delete newState[action.book.id];
-      return newState;
-    default:
-      return state;
-  }
-}
-/*
-const bookReducer = initialState => (state = initialState, action) => {
-  let newState;
-  switch (action.type) {
-    case CREATE_BOOK:
-      return state.concat(action.book);
-    case REMOVE_BOOK:
-      newState = { ...state };
-      delete newState[action.book.id];
-      return newState;
+      return {
+        ...state, books: state.books.filter(book => book.id !== action.id),
+      };
     default:
       return state;
   }
 };
-export default bookReducer;
-*/
+
+export default booksReducer;
