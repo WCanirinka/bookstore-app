@@ -20,7 +20,7 @@ export default function BooksList({ books }) {
         </tr>
       </thead>
       <tbody>
-        { displayBooks }
+        { displayBooks() }
       </tbody>
     </table>
   );
