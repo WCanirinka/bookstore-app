@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import Book from '../components/Book';
 
 
-export default function BooksList({ books }) {
-  const displayBooks = Object.keys(books) > 0 ? (books.map(book => (
-    <Book book={book} key={book.id} />
+export default function BooksList({ store }) {
+  /*
+  const displayBooks = Object.keys(books) > 0 ? (Object.keys(books).map(bookKey => (
+    <Book book={books[bookKey]} key={bookKey} />
   ))) : null;
-
+*/
   return (
     <table>
       <thead>
@@ -19,7 +20,8 @@ export default function BooksList({ books }) {
         </tr>
       </thead>
       <tbody>
-        { displayBooks() }
+        { //displayBooks()
+         }
       </tbody>
     </table>
   );

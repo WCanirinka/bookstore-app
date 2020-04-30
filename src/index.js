@@ -6,28 +6,21 @@ import rootReducer from './reducers/index';
 import './index.css';
 import App from './components/App';
 
-// const initialState = {
-//   books: {},
-// };
-
-// for (let index = 0; index < 3; index += 1) {
-//   const num = Math.floor(Math.random() * 20);
-//   initialState.books[num] = {
-//     id: num,
-//     title: `Book test ${num}`,
-//     category: 'Kids',
-//   };
-// }
-
 const initialState = {
-  books: [
-    { id: Math.floor(Math.random() * 20), title: 'Title 1', category: 'Kids' },
-    { id: Math.floor(Math.random() * 20), title: 'Title 2', category: 'Action' },
-    { id: Math.floor(Math.random() * 20), title: 'Title 3', category: 'Learning' },
-  ],
+  books: {},
 };
 
-const store = createStore(rootReducer(initialState));
+for (let index = 0; index < 3; index += 1) {
+  const num = Math.floor(Math.random() * 20);
+  initialState.books[num] = {
+    id: num,
+    title: `Book test ${num}`,
+    category: 'Kids',
+  };
+}
+
+// const store = createStore(rootReducer(initialState));
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>
