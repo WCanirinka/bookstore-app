@@ -1,6 +1,7 @@
 const action = {
   CREATE_BOOK: 'CREATE_BOOK',
   REMOVE_BOOK: 'REMOVE_BOOK',
+  CHANGE_FILTER: 'CHANGE_FILTER',
 };
 
 const createBook = book => ({
@@ -13,4 +14,11 @@ const removeBook = book => ({
   payload: book,
 });
 
-export default { action, createBook, removeBook };
+const changeFilter = filter => ({
+  type: action.CHANGE_FILTER,
+  payload: filter,
+});
+
+export default {
+  action, createBook, removeBook, changeFilter,
+};
