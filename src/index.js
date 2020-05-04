@@ -8,9 +8,9 @@ import App from './components/App';
 
 const initialState = {
   books: [
-    { id: Math.floor(Math.random() * 30).toString(), title: 'Title 1', category: 'Kids' },
-    { id: Math.floor(Math.random() * 30).toString(), title: 'Title 2', category: 'Action' },
-    { id: Math.floor(Math.random() * 30).toString(), title: 'Title 3', category: 'Learning' },
+    { id: Math.floor(Math.random() * 30), title: 'Title 1', category: 'Kids' },
+    { id: Math.floor(Math.random() * 30), title: 'Title 2', category: 'Action' },
+    { id: Math.floor(Math.random() * 30), title: 'Title 3', category: 'Learning' },
   ],
 };
 
