@@ -14,7 +14,7 @@ const initialState = {
   ],
 };
 
-const store = createStore(rootReducer(initialState));
+const store = createStore(rootReducer, initialState);
 
 ReactDOM.render(
   <React.StrictMode>
