@@ -8,7 +8,7 @@ export default function CategoryFilter({ changeFilter }) {
   return (
     <div>
       <span>Filter&nbsp;</span>
-      <select onChange={changeFilter}>
+      <select onChange={e => changeFilter(e.target.value)}>
         {filters.map(category => (
           <option value={category} key={category}>
             {category}
