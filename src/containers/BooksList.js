@@ -8,25 +8,22 @@ import CategoryFilter from '../components/CategoryFilter';
 const { removeBook, changeFilter } = actions;
 
 const BookList = ({
-  books, removeBook, changeFilter, filter,
+  books, filter, removeBook, changeFilter,
 }) => {
-  const handleRemoveBook = book => {
-    removeBook(book);
-  };
+  const handleRemoveBook = book => removeBook(book);
 
   const filteredBooks = filter === 'All' ? books : books.filter(book => book.category === filter);
+
+  const handleFilterChange = filter => changeFilter(filter);
 
   const displayBooks = filteredBooks.length > 0 ? (filteredBooks.map(book => (
     <Book book={book} key={Math.random() * 20} removeBook={handleRemoveBook} />
   ))) : null;
 
-  const handleFilterChange = filter => {
-    changeFilter(filter);
-  };
 
   return (
     <div>
-      <CategoryFilter onChange={handleFilterChange} />
+      <CategoryFilter changeFilter={handleFilterChange} />
       <table>
         <thead>
           <tr>
@@ -65,7 +62,7 @@ const mapDispatchToProps = dispatch => ({
   changeFilter: filter => dispatch(changeFilter(filter)),
 });
 
-const mapStateToProps = ({ booksReducer: { books }, filterReducer: { filter } }) => ({
+const mapStateToProps = ({ booksReducer: { books }, filterReducer: filter }) => ({
   books,
   filter,
 });

@@ -4,11 +4,11 @@ import categories from '../helper/bookCategory';
 
 const filters = ['All', ...categories];
 
-export default function CategoryFilter({ onChange }) {
+export default function CategoryFilter({ changeFilter }) {
   return (
     <div>
       <span>Filter&nbsp;</span>
-      <select onChange={onChange}>
+      <select onChange={changeFilter}>
         {filters.map(category => (
           <option value={category} key={category}>
             {category}
@@ -20,5 +20,5 @@ export default function CategoryFilter({ onChange }) {
 }
 
 CategoryFilter.propTypes = {
-  onChange: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
 };
