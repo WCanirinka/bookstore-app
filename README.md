@@ -16,7 +16,7 @@ Description will go here.
 
 ## Live version
 
-> [Here](thirsty-benz-e47a7e.netlify.app)
+> [Here](https://thirsty-benz-e47a7e.netlify.app/)
 
 ## Built with
 
@@ -29,7 +29,7 @@ Description will go here.
 
 To get a local copy up and running follow these simple steps.
 
-Clone or fork the [repository](https://github.com/lucasmazo32/calculator).
+Clone or fork the [repository](https://github.com/WCanirinka/bookstore-app).
 
 ### `npm start`
 
