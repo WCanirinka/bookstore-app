@@ -52,20 +52,23 @@ class BooksForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Title" name="title" onChange={this.handleChange} />
-        <select name="category" onChange={this.handleChange}>
-          <option disabled>
-            Select Category
-          </option>
-          {categories.map(category => (
-            <option value={category} key={category}>
-              {category}
+      <div className="book-form-container">
+        <h3>ADD NEW BOOK</h3>
+        <form onSubmit={this.handleSubmit}>
+          <input className="book-input" type="text" placeholder="Title" name="title" onChange={this.handleChange} />
+          <select name="category" onChange={this.handleChange}>
+            <option disabled>
+              Select Category
             </option>
-          ))}
-        </select>
-        <input type="submit" value="submit" />
-      </form>
+            {categories.map(category => (
+              <option value={category} key={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+          <input className="submit-btn" type="submit" value="Add Book" />
+        </form>
+      </div>
     );
   }
 }

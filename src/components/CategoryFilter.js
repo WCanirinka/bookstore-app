@@ -7,7 +7,7 @@ const filters = ['All', ...categories];
 export default function CategoryFilter({ changeFilter }) {
   return (
     <div>
-      <span>Filter&nbsp;</span>
+      <span>Category filter&nbsp;</span>
       <select onChange={e => changeFilter(e.target.value)}>
         {filters.map(category => (
           <option value={category} key={category}>
