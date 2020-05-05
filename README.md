@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e15931ee-e3b3-4111-a612-c717065926c0/deploy-status)](https://app.netlify.com/sites/thirsty-benz-e47a7e/deploys)
+
 ## Table of Contents
 * [About the Project](#about-the-project)
 * [Live version](#live-version)
@@ -14,7 +16,7 @@ Description will go here.
 
 ## Live version
 
-> [Here](https://aqueous-ridge-05013.herokuapp.com/)
+> [Here](thirsty-benz-e47a7e.netlify.app)
 
 ## Built with
 
