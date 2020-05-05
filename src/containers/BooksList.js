@@ -22,21 +22,11 @@ const BookList = ({
 
 
   return (
-    <div>
+    <div className="booklist-container">
       <CategoryFilter changeFilter={handleFilterChange} />
-      <table>
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Remove Book</th>
-          </tr>
-        </thead>
-        <tbody>
-          {displayBooks}
-        </tbody>
-      </table>
+      <div className="books-container">
+        {displayBooks}
+      </div>
     </div>
   );
 };
